@@ -1,0 +1,31 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<DelmoChickenWebApp.Models.Product>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*<script src="" type="text/javascript" charset="utf-8"></script>*@
+
+<div class="row" id="restaurantList">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <b>@Html.ActionLink(item.ProductName, "Details", new { id = item.ProductId })</b>
+                </div>
+                <div class="panel-body" style="height:180px;  text-align:center"> 
+                    <a href="/images/@item.Image" data-lightbox="@item.ProductId">
+                        <img src="/images/@item.Image" style="width:50%" alt="@item.ProductName" />
+                    </a>
+                </div> 
+                <div class="panel-footer"><b>Price : RS @item.Price</b></div>
+            </div>
+        </div>
+    }
+</div>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("ProductList",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

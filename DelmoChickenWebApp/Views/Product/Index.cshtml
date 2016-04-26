@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<DelmoChickenWebApp.Models.Product>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p> 
+        <a href="@Url.Action("Create")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Create Product</a>|
+        @Html.ActionLink("Back To Admin", "Index","Admin",null,null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ProductName)*@
+            @Html.ActionLink("Product Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+          Image
+        </th> 
+        <th> 
+            @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td> 
+            <a href="@Url.Action("edit", new { id = item.ProductId })" class="btn btn-xs btn-primary">
+                <i class="glyphicon glyphicon-edit"></i>
+                Edit
+            </a>
+            <a href="@Url.Action("details", new { id = item.ProductId })" class="btn btn-xs btn-success">
+                <i class="glyphicon glyphicon-check"></i>
+                Details
+            </a>            
+            <a href="@Url.Action("delete", new { id = item.ProductId })" class="btn btn-xs btn-danger">
+                <i class="glyphicon glyphicon-remove"></i>Delete
+            </a>
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

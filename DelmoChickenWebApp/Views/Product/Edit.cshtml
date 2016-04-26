@@ -1,0 +1,71 @@
+﻿@model DelmoChickenWebApp.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+<script src="~/Scripts/ckeditor/adapters/jquery.js"></script>
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-lg-8">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ProductId)
+
+            <div class="form-group">
+                @Html.LabelFor(p => p.ProductName)
+                @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(p => p.Image)
+                @Html.TextBoxFor(p => p.Image, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(p => p.Price)
+                @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(f => f.Discription)
+                @Html.TextAreaFor(f => f.Discription, new { @class = "ckeditor", placeholder = "Content" })
+                @Html.ValidationMessageFor(model => model.Discription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-lg-4">
+            @*<div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>*@
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Product Action</div>
+                <div class="panel-body">
+                    <input type="submit" value="Update" class="btn btn-success btn-sm" />
+                    <a href="@Url.Action("Index")">Or Cancel</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/ckeditor/ckeditor.js"></script> 
+        <script>
+            CKEDITOR.replace("Discription", { toolbar: '1', htmlEncodeOutput: true });
+        </script>*@
+}
