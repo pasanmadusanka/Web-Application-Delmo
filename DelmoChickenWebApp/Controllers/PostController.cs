@@ -11,6 +11,8 @@ using DelmoChickenWebApp.Models;
 
 namespace DelmoChickenWebApp.Controllers
 {
+    //[Authorize(Roles="Admin")]
+    [Authorize]
     public class PostController : Controller
     {
         private DataContext db = new DataContext();

@@ -11,7 +11,7 @@ namespace DelmoChickenWebApp.Models
     {
         public int Id { get; set; }
 
-        [Required, MaxLength(128)]
+        [Required, StringLength(128, MinimumLength = 3)]
         public string Title { get; set; } 
 
         [Required, DataType(DataType.MultilineText), AllowHtml]
@@ -21,7 +21,7 @@ namespace DelmoChickenWebApp.Models
         Display(Name = "Date")]
         public DateTime CreatedAt { get; set; }
 
-        [MaxLength(128)]
+        [MaxLength(128), DataType(DataType.Url, ErrorMessage = "Image path should be a url")]
         public string ImagePath { get; set; }
     }
 }

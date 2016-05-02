@@ -1,0 +1,48 @@
+﻿<!-- make the view strongly typed-->
+@model DelmoChickenWebApp.ViewModel.AuthLogin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@*<p>
+        the value of the test in our model is: @Model.Test
+    </p>*@
+
+<h2 class="text-success">Login as site admin</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @*<div>
+        @Html.LabelFor(x => x.Username)
+        @Html.EditorFor(x => x.Username)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+    </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username)
+        @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        <input class="btn btn-info" type="submit" value="Login" />
+    </div>
+}
+
+<!--form method="post">
+    <input type="text" name="Username" />
+    <input type="password" name="Password" />
+    <input type="submit" value="Login" />
+</--form-->

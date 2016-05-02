@@ -17,8 +17,8 @@
   margin-left: -1px;
   line-height: 1.428571429;
   text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #999999;/*Edit #ffffff;*/ 
+  border: 1px solid #999999;/*Edit #dddddd; */ 
 }
 
 .pagination > li:first-child > a,
@@ -38,7 +38,7 @@
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-  background-color: #eeeeee;
+  background-color: #d1c6c6;/*Edit #eeeeee;*/ 
 }
 
 .pagination > .active > a,

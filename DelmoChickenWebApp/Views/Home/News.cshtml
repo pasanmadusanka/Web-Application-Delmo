@@ -17,8 +17,8 @@
                 </div>
                 <div class="panel-body">
                     <p>@Html.Raw(item.Content)</p> 
-                    <a href="/images/@item.ImagePath" data-lightbox="@item.ImagePath">
-                        <img src="/images/@item.ImagePath" style="width:25%" alt="@item.Title" />
+                    <a href="@item.ImagePath" data-lightbox="@item.ImagePath">
+                        <img src="@item.ImagePath" style="width:25%" alt="@item.Title" />
                     </a>
                 </div>
                 <div class="panel-footer"><b>@item.CreatedAt</b></div>

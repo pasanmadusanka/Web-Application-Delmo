@@ -1,58 +1,89 @@
-﻿@{
+﻿@model DelmoChickenWebApp.Models.Contact
+@{
     ViewBag.Title = "Contact";
 }
 <!-- Main hero unit for a primary marketing message or call to action -->
-<div class="jumbotron" style="background: #358cce; color: #fff; border-radius: 0px;">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1>Contact us</h1>
+<h1>Contact us</h1>
+<div class="container">
+    <div class="col-sm-12">
+        <p>For all your queries, please feel free to contact us. One of our management personnel will get back to you as soon as possible regarding your inquiry.</p>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-sm-6">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Name)
+                        @Html.TextBoxFor(p => p.Name, new { @class = "form-control", @placeholder = "Your Name" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Email)
+                        @Html.TextBoxFor(p => p.Email, new { @class = "form-control", @placeholder = "Your E-Mail" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.PhoneNumber)
+                        @Html.TextBoxFor(p => p.PhoneNumber, new { @class = "form-control", @placeholder = "Your contact number" })
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Subject)
+                        @Html.TextBoxFor(p => p.Subject, new { @class = "form-control", @placeholder = "Add queries or message title" })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(f => f.Message)
+                        @Html.TextAreaFor(f => f.Message, new { @class = "form-control", @placeholder = "Place your message hear" })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Send Us <a href="mailto:info@delmo.com">info@delmo.lk</a></div>
+                        <div class="panel-body">
+                            <input type="submit" value="Submit" class="btn btn-success btn-sm" />
+                            <a href="@Url.Action("Index")">Or Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><i class="glyphicon glyphicon-phone"></i>Call Us</div>
+                        <div class="panel-body">
+                            <address>
+                                <abbr title="Phone"><i class="glyphicon glyphicon-phone"></i>Hot Line :</abbr>
+                                +9433 22 40 802 <br />
+                                <abbr title="E-Mail"><i class="glyphicon glyphicon-envelope"></i>E-Mail :</abbr>
+                                <a href="mailto:info@delmo.com">info@delmo.lk</a>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        }
     </div>
 </div>
-
-@*<address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>*@
-
-@*<div id="fb-root"></div>
-
-    <div class="fb-page" data-href="https://www.facebook.com/delmochickenandagro" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/delmochickenandagro">
-            <a href="https://www.facebook.com/delmochickenandagro">Delmo Chicken &amp; Agro - Pvt Ltd.</a></blockquote></div></div>
-
-    <div class="container">
-        <div class="row">*@
-
-@*<div class="col-sm-6">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">Graph</h3>
-            </div>
-            <div class="panel-body">
-                <img src="http://dummyimage.com/600x500/000/fff&amp;text=Graph" class="img-responsive">
-            </div>
-        </div>
-    </div>*@
-
 
 <div class="container">
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title glyphicon glyphicon-map-marker"> Location</h2>
+                <h2 class="panel-title"><i class="glyphicon glyphicon-map-marker"></i> Location</h2>
             </div>
-            <div id="mapapi" style=" height: 250px; " class="panel-body">
+            <div id="mapapi" style="height: 250px;" class="panel-body">
             </div>
         </div>
     </div>
@@ -63,25 +94,24 @@
             <div class="col-sm-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> Head Office And Broiler Processing Plant</h3>
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-phone"></i> Head Office And Plant</h3>
                     </div>
-                    <div class="panel-body" style="height: 160px;">
+                    <div class="panel-body" @*style="height: 160px;"*@>
                         Delmo Chicken & Agro (pvt) Ltd,<br />
                         No. 21, Pahurumankadawatta,<br />
                         Waradala,<br />
                         Mellawagedara,<br />
                         Sri Lanka.<br />
-                        + 94 33 2240800<br />
-                        + 94 33 2220485
+                        + 94 33 2240800 + 94 33 2220485
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Registred Office</h3>
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-phone"></i>Registred Office</h3>
                     </div>
-                    <div class="panel-body" style="height: 160px;">
+                    <div class="panel-body" @*style="height: 160px;"*@>
                         Delmo Chicken & Agro (pvt) Ltd,<br />
                         Kambikotuwa watta,<br />
                         Kappitiwalana,<br />
@@ -90,11 +120,13 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Branch Office</h3>
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-phone"></i>Branch Office</h3>
                     </div>
                     <div class="panel-body">
                         No.199/B,<br />Minuwangoda Road,<br />
@@ -106,7 +138,7 @@
             <div class="col-sm-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Closed House Farms</h3>
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-phone"></i>Closed House Farms</h3>
                     </div>
                     <div class="panel-body">
 
@@ -136,7 +168,7 @@
     <div class="col-sm-4 col-xs-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title glyphicon glyphicon-tag"> Facebook</h3>
+                <h3 class="panel-title"><i class="glyphicon glyphicon-camera"></i>Facebook</h3>
             </div>
             <div class="panel-body">
                 <div id="fb-root"></div>

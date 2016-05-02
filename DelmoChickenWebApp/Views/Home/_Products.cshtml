@@ -4,20 +4,20 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @*<script src="" type="text/javascript" charset="utf-8"></script>*@
 
-<div class="row" id="restaurantList">
+<div class="row">
 
     @foreach (var item in Model)
     {
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <b>@Html.ActionLink(item.ProductName, "Details", new { id = item.ProductId })</b>
                 </div>
-                <div class="panel-body" style="height:180px;  text-align:center"> 
-                    <a href="/images/@item.Image" data-lightbox="@item.ProductId">
-                        <img src="/images/@item.Image" style="width:50%" alt="@item.ProductName" />
+                <div class="panel-body" style="height:180px;  text-align:center">
+                    <a href="/images/@item.Image" data-lightbox="@item.ProductId" data-title="@item.ProductName">
+                        <img src="/images/@item.Image" class="col-sm-4 col-xs-4" style="width:50%" alt="@item.ProductName" />
                     </a>
-                </div> 
+                </div>
                 <div class="panel-footer"><b>Price : RS @item.Price</b></div>
             </div>
         </div>

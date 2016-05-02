@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>News</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create")" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Create Product</a>
+    <a href="@Url.Action("Index", "Admin", null)" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-arrow-left"></i>Back To Admin</a>
 </p>
 <table class="table">
     <tr>

@@ -43,18 +43,15 @@
                 @Html.ValidationMessageFor(model => model.Discription, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="col-lg-4">
-            @*<div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
-                </div>*@
-
+        <div class="col-lg-4"> 
             <div class="panel panel-info">
                 <div class="panel-heading">Product Action</div>
                 <div class="panel-body">
                     <input type="submit" value="Update" class="btn btn-success btn-sm" />
-                    <a href="@Url.Action("Index")">Or Cancel</a>
+                    <a class="btn btn-default btn-sm" href="@Url.Action("Index")">
+                        <i class="glyphicon glyphicon-arrow-left"></i>
+                        Go Back
+                    </a>
                 </div>
             </div>
 
@@ -64,7 +61,7 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*<script src="~/Scripts/ckeditor/ckeditor.js"></script> 
+    @*<script src="~/Scripts/ckeditor/ckeditor.js"></script>
         <script>
             CKEDITOR.replace("Discription", { toolbar: '1', htmlEncodeOutput: true });
         </script>*@

@@ -12,6 +12,7 @@ using PagedList;
 
 namespace DelmoChickenWebApp.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private DataContext db = new DataContext();

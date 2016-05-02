@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Delmo Chicken and Agro pvt ltd.</title> 
+    <link rel="shortcut icon" type="image/png" href="~/Images/DELMO_LOGO_Icon.png" />
+    <title>@ViewBag.Title - Delmo Chicken and Agro pvt ltd.</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr") 
+    @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/lightbox.css" rel="stylesheet" />
 </head>
 <body>
@@ -28,23 +29,51 @@
                     <li>@Html.ActionLink("Products", "ProductList", "Home")</li>
                     <li>@Html.ActionLink("News", "News", "Home")</li>
                     <li>@Html.ActionLink("CSR", "csr", "home")</li>
-                    <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Welcom Back, @User.Identity.Name <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.RouteUrl("logout")"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Admin <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Product Admin", "Index", "Product")</li>
+                                <li>@Html.ActionLink("News", "Index", "Post")</li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.RouteUrl("login")"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
+                    }
                 </ul>
             </div>
+
+
+
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer class ="text-center">
+        <footer class="text-center">
             <p>&copy; @DateTime.Now.Year - Delmo chicken & agro (pvt) limited. all rights reserved</p>
             <p>Designe and developed by Delmo IT <a href="mailto:pasanmadusanka29@gmail.com">IT@delmo.lk</a><br /></p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        <script src="~/Scripts/lightbox.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/lightbox.js"></script>
     @RenderSection("scripts", required: false)
 
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
