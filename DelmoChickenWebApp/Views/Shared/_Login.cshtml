@@ -1,0 +1,27 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Admin <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Product Admin", "Index", "Product")</li>
+                <li>@Html.ActionLink("News", "Index", "Post")</li>
+            </ul>
+        </li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Welcom Back, @User.Identity.Name <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.RouteUrl("logout")"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li><a href="@Url.RouteUrl("login")"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
+    }
+</ul>
+

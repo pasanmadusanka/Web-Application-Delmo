@@ -121,3 +121,47 @@ D:\Projects\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.A
 D:\Projects\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.csproj.GenerateResource.Cache
 D:\Projects\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.dll
 D:\Projects\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.pdb
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.csprojResolveAssemblyReference.cache
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.Initial.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.AddUsersAndRoles.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.Add_Product_Discription.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.AddPostsModel.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.UpdatePostsModel.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.AddValidationsToModels.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.Migrations.AddImageURLPath.resources
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.csproj.GenerateResource.Cache
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\obj\Debug\DelmoChickenWebApp.pdb
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\DelmoChickenWebApp.dll.config
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\DelmoChickenWebApp.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\DelmoChickenWebApp.pdb
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\Antlr3.Runtime.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\BCrypt.Net.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\EntityFramework.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\Newtonsoft.Json.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\PagedList.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\PagedList.Mvc.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Helpers.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Mvc.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Optimization.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Razor.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\WebGrease.dll
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\BCrypt.Net.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\EntityFramework.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\Newtonsoft.Json.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\PagedList.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\PagedList.Mvc.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Helpers.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Mvc.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Optimization.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.Razor.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pasan\Desktop\Web App9\Web App\DelmoChickenWebApp\bin\Antlr3.Runtime.pdb

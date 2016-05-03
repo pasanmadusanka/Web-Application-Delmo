@@ -32,6 +32,10 @@ namespace DelmoChickenWebApp
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/admin/styles")
+                .Include("~/content/styles/bootstrap.css")
+                .Include("~/content/styles/admin.css"));
         }
     }
 }

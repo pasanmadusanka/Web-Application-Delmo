@@ -15,16 +15,20 @@ namespace DelmoChickenWebApp.Models
             BCrypt.Net.BCrypt.HashPassword("", workFactor);
         }
         public User() {
-            this.Roles = new HashSet<Role>();
+            Roles = new List<Role>();
         }
         public int Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual IList<Role> Roles { get; set; }
+        public virtual void SetPassword(string password)
+        {
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, workFactor);
+        }
         public virtual bool CheckPassword(string password)
         {
             return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
-        }
+        } 
     }
 }
