@@ -8,6 +8,9 @@
             <ul class="dropdown-menu">
                 <li>@Html.ActionLink("Product Admin", "Index", "Product")</li>
                 <li>@Html.ActionLink("News", "Index", "Post")</li>
+                <li>
+                    <a href="@Url.Action("index", "users", new { area = "admin" })">View Users in admin</a>
+                </li> 
             </ul>
         </li>
         <li role="presentation" class="dropdown">

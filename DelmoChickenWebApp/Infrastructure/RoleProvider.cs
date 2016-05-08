@@ -8,8 +8,8 @@ namespace DelmoChickenWebApp.Infrastructure
     public class RoleProvider : System.Web.Security.RoleProvider
     {
         public override string[] GetRolesForUser(string username)
-        {
-            return new[] { "admin2" };
+        {//athorization
+            return Account.User.Roles.Select(role => role.Name).ToArray();
         }
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {

@@ -48,13 +48,16 @@
                     <i class="glyphicon glyphicon-check"></i>
                     Details
                 </a>
-                <a href="@Url.Action("delete", new { id = item.ProductId })" class="btn btn-xs btn-danger">
+                @*<a href="@Url.Action("delete", new { id = item.ProductId })" class="btn btn-xs btn-danger">
                     <i class="glyphicon glyphicon-remove"></i>Delete
+                </a>*@
+                <a href="@Url.Action("delete", new { id = item.ProductId })" class="btn btn-xs btn-danger" data-post="Are You Sure You Want To Delete @item.ProductName?">
+                    <i class="glyphicon glyphicon-remove"></i>
+                    Delete
                 </a>
             </td>
         </tr>
-    }
-
+    } 
 </table>
 <br />
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount

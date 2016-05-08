@@ -92,6 +92,44 @@ namespace DelmoChickenWebApp.Areas.Admin.Controllers
                 }).ToList()
             });
 
+        } 
+
+        public ActionResult ResetPassword(int id)
+        {
+            var user = db.Users.Find(id);
+            if (user == null)
+                return HttpNotFound();
+            return View(new UsersResetPassword
+            {
+                Username = user.Username
+            });
+        }
+        [HttpPost,ValidateAntiForgeryToken]
+        public ActionResult ResetPassword(int id, UsersResetPassword form)
+        {
+            var user = db.Users.Find(id);
+            if (user == null)
+                return HttpNotFound();
+
+            form.Username = user.Username;
+            if (!ModelState.IsValid)
+                return View(form);
+
+            user.SetPassword(form.Password);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var user = db.Users.Find(id);
+            if (user == null)
+                return HttpNotFound();
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         private void SyncRols(IList<RoleCheckbox> checkboxes, IList<Role> roles)

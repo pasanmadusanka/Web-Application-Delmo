@@ -13,5 +13,7 @@
             .attr("action", $this.attr("href"))
             .appendTo(document.body)
             .submit();
+
     });
+
 });

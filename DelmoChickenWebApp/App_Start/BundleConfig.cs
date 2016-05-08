@@ -27,7 +27,8 @@ namespace DelmoChickenWebApp
                       "~/scripts/Forms.js",
                       "~/scripts/ProductSearch.js"));
 
-            
+            bundles.Add(new ScriptBundle("~/admin/scripts").Include(
+                      "~/areas/admin/Scripts/DeleteEntity.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
